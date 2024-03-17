@@ -40,20 +40,20 @@ public class SteamAPI {
 	}
 
 	public static boolean init() throws SteamException {
-		return initEx() == InitResult.OK;
+		return InitResult.byOrdinal(nativeInit()) == InitResult.OK;
 	}
 
-	public static InitResult initEx() throws SteamException {
-
-		if (!isNativeAPILoaded) {
-			throw new SteamException("Native libraries not loaded.\nEnsure to call SteamAPI.loadLibraries() first!");
-		}
-
-		InitResult result = InitResult.byOrdinal(nativeInit());
-		isRunning = result == InitResult.OK;
-
-		return result;
-	}
+//	public static InitResult initEx() throws SteamException {
+//
+//		if (!isNativeAPILoaded) {
+//			throw new SteamException("Native libraries not loaded.\nEnsure to call SteamAPI.loadLibraries() first!");
+//		}
+//
+//		InitResult result = InitResult.byOrdinal(nativeInit());
+//		isRunning = result == InitResult.OK;
+//
+//		return result;
+//	}
 
 	public static void shutdown() {
 		isRunning = false;
