@@ -19,7 +19,7 @@ solution "steamworks4j"
 	}
 
 	flags {
-		"Optimize"
+		optimize "On"
 	}
 
 	project "steamworks4j"
