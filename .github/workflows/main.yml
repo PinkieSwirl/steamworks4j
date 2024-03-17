@@ -67,7 +67,9 @@ jobs:
           name: server-cpp
           path: ${{ github.workspace }}/server/src/main/native/
       - name: Set up premake for linux compile
-        run: sudo apt-get install premake4
+        uses: abel0b/setup-premake@v2.3
+        with:
+          version: "5.0.0-beta2"
       - name: Compile linux project
         run: ./build-linux.sh
         working-directory: ${{ github.workspace }}/build-natives/
