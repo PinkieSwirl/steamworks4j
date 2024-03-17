@@ -39,11 +39,11 @@ public class SteamAPI {
 		return nativeRestartAppIfNecessary(appId);
 	}
 
-	public static boolean initEx() throws SteamException {
-		return init() == InitResult.OK;
+	public static boolean init() throws SteamException {
+		return initFlat() == InitResult.OK;
 	}
 
-	public static InitResult init() throws SteamException {
+	public static InitResult initFlat() throws SteamException {
 
 		if (!isNativeAPILoaded) {
 			throw new SteamException("Native libraries not loaded.\nEnsure to call SteamAPI.loadLibraries() first!");
@@ -106,7 +106,7 @@ public class SteamAPI {
 			return false;
 		}
 
-		return SteamAPI_InitEx(nullptr);
+		return SteamAPI_InitFlat(nullptr);
 	*/
 
 	private static native void nativeShutdown(); /*
