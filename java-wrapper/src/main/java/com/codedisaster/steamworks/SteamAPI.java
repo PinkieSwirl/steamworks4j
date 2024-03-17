@@ -39,21 +39,21 @@ public class SteamAPI {
 		return nativeRestartAppIfNecessary(appId);
 	}
 
-	public static boolean init() throws SteamException {
-		return InitResult.byOrdinal(nativeInit()) == InitResult.OK;
+	public static boolean initEx() throws SteamException {
+		return init() == InitResult.OK;
 	}
 
-//	public static InitResult initEx() throws SteamException {
-//
-//		if (!isNativeAPILoaded) {
-//			throw new SteamException("Native libraries not loaded.\nEnsure to call SteamAPI.loadLibraries() first!");
-//		}
-//
-//		InitResult result = InitResult.byOrdinal(nativeInit());
-//		isRunning = result == InitResult.OK;
-//
-//		return result;
-//	}
+	public static InitResult init() throws SteamException {
+
+		if (!isNativeAPILoaded) {
+			throw new SteamException("Native libraries not loaded.\nEnsure to call SteamAPI.loadLibraries() first!");
+		}
+
+		InitResult result = InitResult.byOrdinal(nativeInit());
+		isRunning = result == InitResult.OK;
+
+		return result;
+	}
 
 	public static void shutdown() {
 		isRunning = false;

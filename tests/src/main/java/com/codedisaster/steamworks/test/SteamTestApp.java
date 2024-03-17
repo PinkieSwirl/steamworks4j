@@ -82,7 +82,7 @@ public abstract class SteamTestApp {
 
 		System.out.println("Initialise Steam client API ...");
 
-		SteamAPI.InitResult result = SteamAPI.initEx();
+		SteamAPI.InitResult result = SteamAPI.init();
 		if (result != SteamAPI.InitResult.OK) {
 			System.err.println("SteamAPI.initEx() failed: " + result.name());
 			SteamAPI.printDebugInfo(System.err);
@@ -167,7 +167,7 @@ public abstract class SteamTestApp {
 
 			System.out.println("Initialise Steam client API ...");
 
-			if (!SteamAPI.init()) {
+			if (!SteamAPI.initEx()) {
 				SteamAPI.printDebugInfo(System.err);
 				return false;
 			}
