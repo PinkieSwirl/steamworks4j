@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: Checkout Steamworks SDK 1.53
+      - name: Checkout Steamworks SDK 1.59
         uses: actions/checkout@v4
         with:
           repository: rlabrecque/SteamworksSDK
@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: Checkout Steamworks SDK 1.53
+      - name: Checkout Steamworks SDK 1.59
         uses: actions/checkout@v4
         with:
           repository: rlabrecque/SteamworksSDK
@@ -89,7 +89,7 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: Checkout Steamworks SDK 1.53
+      - name: Checkout Steamworks SDK 1.59
         uses: actions/checkout@v4
         with:
           repository: rlabrecque/SteamworksSDK
@@ -130,7 +130,7 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: Checkout Steamworks SDK 1.53
+      - name: Checkout Steamworks SDK 1.59
         uses: actions/checkout@v4
         with:
           repository: rlabrecque/SteamworksSDK
